@@ -239,7 +239,10 @@ class PdfJinja(object):
             page.mergePage(watermark)
 
         output = PdfFileWriter()
-        pages = pages or xrange(filled.getNumPages())
+        try:
+            pages = pages or xrange(filled.getNumPages())
+        except:
+            pages = pages or range(filled.getNumPages())
         for p in pages:
             output.addPage(filled.getPage(p))
 
