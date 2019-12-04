@@ -240,7 +240,7 @@ class PdfJinja(object):
 
         output = PdfFileWriter()
         try:
-            pages = pages or xrange(filled.getNumPages())
+            pages = pages or range(filled.getNumPages())
         except:
             pages = pages or range(filled.getNumPages())
         for p in pages:
